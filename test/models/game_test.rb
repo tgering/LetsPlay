@@ -1,7 +1,8 @@
 require "test_helper"
 
 describe User do
-  it "should fail" do
-    assert true == false
+  describe "validity" do
+    it "requires a user"
+    it "requires a sport"
   end
 end
