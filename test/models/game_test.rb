@@ -1,8 +1,9 @@
 require "test_helper"
 
-describe User do
-  describe "validity" do
-    it "requires a user"
-    it "requires a sport"
+describe Game do
+  let(:game) { Game.new }
+
+  it "must be valid" do
+    value(game).must_be :valid?
   end
 end
