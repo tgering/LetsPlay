@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get 'rooms/show'
-
+  get '/chat', to: 'rooms#show'
   resources :games
-  root to: "rooms#show"
-
+  root to: "welcome#show"
   mount ActionCable.server => '/cable'
 end

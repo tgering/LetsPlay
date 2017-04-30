@@ -21,9 +21,13 @@
 </p>
 
 <p>
-  <strong>Attendee:</strong>
-  <%= @game.attendee %>
+  <strong>Attendees:</strong>
+  <%= @game.attendees %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
 <%= link_to 'Back', games_path %>
+<% if current_user.email == @game.creator %>
+| <%= link_to 'Delete Game', game_path(@game), method: :delete, data: {confirm: "You sure?"} %>
+<% end %>
+| <a href="/chat">Chat Room</a>

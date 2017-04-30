@@ -1,4 +1,4 @@
-class CreateGames < ActiveRecord::Migration[5.0]
+class ChangeGamesAttendeeToString < ActiveRecord::Migration[5.0]
   def change
     drop_table :games
     create_table :games do |t|
