@@ -12,12 +12,15 @@
 
   <body>
     <header>
+      <a href="/">Home<span class="sr-only">(current)</span></a>
+      </br>
       <% if signed_in? %>
+        <%= link_to 'Sign out', sign_out_path, method: :delete%></br>
         Signed in as: <%= current_user.email %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete%>
       <% else %>
-        <%= link_to 'Sign in', sign_in_path%>
+        <a href="/sign_in">Sign In<span class="sr-only">(current)</span></a>
       <% end %>
+
     </header>
 
 
