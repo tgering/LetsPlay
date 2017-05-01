@@ -64,9 +64,21 @@ class GamesController < ApplicationController
 
   def join
     @game = Game.find(params[:id])
-    @game.update(attendees: current_user.email)
-    respond_to do |format|
-      format.html { redirect_to @game, notice: 'Game was successfully created.' }
+    if @game.attendees != nil && @game.attendees.exclude?(current_user.email)
+      new_attendees = @game.attendees + " " + current_user.email
+      @game.update(attendees: new_attendees)
+      respond_to do |format|
+        format.html { redirect_to @game, notice: 'Game was successfully joined.' }
+      end
+    elsif @game.attendees == nil
+      @game.update(attendees: current_user.email)
+      respond_to do |format|
+        format.html { redirect_to @game, notice: 'Game was successfully joined.' }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to @game, notice: 'You have already joined this game.' }
+      end
     end
   end
 
