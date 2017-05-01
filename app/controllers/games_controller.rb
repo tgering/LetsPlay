@@ -62,6 +62,14 @@ class GamesController < ApplicationController
     end
   end
 
+  def join
+    @game = Game.find(params[:id])
+    @game.update(attendees: current_user.email)
+    respond_to do |format|
+      format.html { redirect_to @game, notice: 'Game was successfully created.' }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
@@ -70,6 +78,6 @@ class GamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def game_params
-      params.require(:game).permit(:sport, :date, :location, :creator, :attendee)
+      params.require(:game).permit(:sport, :date, :location, :creator, :attendees)
     end
 end
