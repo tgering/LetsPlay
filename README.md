@@ -1,24 +1,14 @@
-# README
+# Lets Play  
+Tyler Gering
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Versions  
+Rails 5.1  
+Ruby 2.2.2  
 
-Things you may want to cover:
+### About This App  
+Lets play is an application designed to coordinate the creation and attendance of various pick up sports games in your area. Boasting features such as a sign up, attendees, and a live chat room Lets Play is your one stop shop to all things pickup sports!
 
-* Ruby version
+### Where Its Hosted  
+Lets Play can currently be found here:  
+http://ec2-34-210-147-31.us-west-2.compute.amazonaws.com:3000/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
